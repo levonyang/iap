@@ -1,0 +1,195 @@
+{
+  "options": [{
+    "key": "basic",
+    "cname": "工商数据",
+    "checked": 1,
+    "value": [{
+      "key": "gongshang_basic",
+      "cname": "工商基本信息",
+      "checked": 1
+    },
+      {
+        "key": "shareholder_information",
+        "cname": "股东信息",
+        "checked": 1
+      },
+      {
+        "key": "key_person",
+        "cname": "主要人员",
+        "checked": 1
+      },
+      {
+        "key": "branch",
+        "cname": "分支机构",
+        "checked": 1
+      },
+      {
+        "key": "change_records",
+        "cname": "工商变更",
+        "checked": 1
+      }
+    ]
+  },
+    {
+      "key": "annual_report",
+      "cname": "企业年报",
+      "checked": 1,
+      "value": [{
+        "key": "2016",
+        "cname": "2016",
+        "checked": 1
+      },
+        {
+          "key": "2015",
+          "cname": "2015",
+          "checked": 1
+        },
+        {
+          "key": "2014",
+          "cname": "2014",
+          "checked": 1
+        },
+        {
+          "key": "2013",
+          "cname": "2013",
+          "checked": 1
+        }
+      ]
+    },
+    {
+      "key": "list",
+      "cname": "上市公司信息",
+      "checked": 1,
+      "value": [{
+        "key": "listing",
+        "cname": "公司概况",
+        "checked": 1
+      },
+        {
+          "key": "managers",
+          "cname": "高管人员",
+          "checked": 1
+        }
+      ]
+    },
+    {
+      "key": "investment",
+      "cname": "投资信息",
+      "checked": 1,
+      "value": [{
+        "key": "invest",
+        "cname": "对外投资",
+        "checked": 1
+      },
+        {
+          "key": "invest_events",
+          "cname": "投资事件",
+          "checked": 1
+        },
+        {
+          "key": "financial_events",
+          "cname": "融资事件",
+          "checked": 1
+        },
+        {
+          "key": "acquirer_events",
+          "cname": "并购事件",
+          "checked": 1
+        },
+        {
+          "key": "exit_events",
+          "cname": "退出事件",
+          "checked": 1
+        }
+      ]
+    },
+    {
+      "key": "intellectual_property",
+      "cname": "知识产权",
+      "checked": 1,
+      "value": [{
+          "key": "patent",
+          "cname": "专利信息",
+          "checked": 1
+        }
+      ]
+    },
+    {
+      "key": "bidding",
+      "cname": "招投标信息",
+      "checked": 1,
+      "value": [{
+        "key": "bid_info",
+        "cname": "招标信息",
+        "checked": 1
+      },
+        {
+          "key": "win_info",
+          "cname": "中标信息",
+          "checked": 1
+        },
+        {
+          "key": "land_auction",
+          "cname": "土地招拍挂信息",
+          "checked": 1
+        }
+      ]
+    },
+    {
+      "key": "risk",
+      "cname": "风险信息",
+      "checked": 1,
+      "value": [{
+        "key": "shixin_info",
+        "cname": "失信被执行人",
+        "checked": 1
+      },
+        {
+          "key": "zhixing_info",
+          "cname": "被执行人信息",
+          "checked": 1
+        },
+        {
+          "key": "judgement_wenshu",
+          "cname": "法院判决",
+          "checked": 1
+        },
+        {
+          "key": "court_ktgg",
+          "cname": "开庭公告",
+          "checked": 1
+        },
+        {
+          "key": "court_fygg",
+          "cname": "法院公告",
+          "checked": 1
+        },
+        {
+          "key": "judge_process",
+          "cname": "审判流程",
+          "checked": 1
+        },
+        {
+          "key": "penalty",
+          "cname": "行政处罚",
+          "checked": 1
+        },
+        {
+          "key": "owing_tax",
+          "cname": "欠税公告",
+          "checked": 1
+        }
+      ]
+    },
+    {
+      "key": "public_sentiment",
+      "cname": "舆情信息",
+      "checked": 1,
+      "value": [{
+        "key": "news",
+        "cname": "新闻",
+        "checked": 1
+      }]
+    }
+  ]
+}

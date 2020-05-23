@@ -1,0 +1,124 @@
+{
+  "schemas": [{
+    "schema": "tv_company",
+    "schemaNameCn": "企业表",
+    "type": "VERTEX",
+    "displayField": "name",
+    "fields": [
+      {
+        "field": "_id",
+        "fieldNameCn": "企业ID",
+        "type": "STRING"
+      },
+      {
+        "field": "name",
+        "fieldNameCn": "企业名称",
+        "type": "STRING"
+      }
+    ]
+  },
+    {
+      "schema": "tv_person",
+      "schemaNameCn": "人员表",
+      "type": "VERTEX",
+      "displayField": "name",
+      "fields": [
+        {
+          "field": "_id",
+          "fieldNameCn": "⼈员ID",
+          "type": "STRING"
+        },
+        {
+          "field": "name",
+          "fieldNameCn": "人员名称",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "schema": "te_holder",
+      "schemaNameCn": "投资信息表",
+      "type": "EDGE",
+      "displayField": "total",
+      "fields": [{
+        "field": "_id",
+        "fieldNameCn": "投资表ID",
+        "type": "STRING"
+      },
+        {
+          "field": "_from",
+          "fieldNameCn": "投资起点",
+          "type": "STRING"
+        },
+        {
+          "field": "_to",
+          "fieldNameCn": "投资终点",
+          "type": "STRING"
+        },
+        {
+          "field": "subconam",
+          "fieldNameCn": "投资⾦额",
+          "type": "DOUBLE"
+        },
+        {
+          "field": "conprop",
+          "fieldNameCn": "投资比例",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "schema": "te_manager",
+      "schemaNameCn": "高管信息表",
+      "type": "EDGE",
+      "displayField": "人员${_from}在${_to}任职${position}，就问你服不服",
+      "fields": [{
+        "field": "_id",
+        "fieldNameCn": "高管关系ID",
+        "type": "STRING"
+      },
+        {
+          "field": "_from",
+          "fieldNameCn": "⼈员ID",
+          "type": "STRING"
+        },
+        {
+          "field": "_to",
+          "fieldNameCn": "企业ID",
+          "type": "STRING"
+        },
+        {
+          "field": "position",
+          "fieldNameCn": "职位",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "uiConfigs":[
+    {
+      "schema":"tv_company",
+      "style":"6",
+      "color":"#5499FF",
+      "size":"LARGE"
+    },
+    {
+      "schema":"tv_person",
+      "style":"9",
+      "color":"#E8B75C",
+      "size":"NORMAL"
+    },
+    {
+      "schema":"te_manager",
+      "style":"9",
+      "color":"#5499FF",
+      "size":"NORMAL"
+    },
+    {
+      "schema":"te_holder",
+      "style":"9",
+      "color":"#2E5897",
+      "size":"NORMAL"
+    }
+  ]
+}

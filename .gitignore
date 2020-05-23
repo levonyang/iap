@@ -1,0 +1,9 @@
+# Project exclude paths
+/iap-account/target/
+/iap-common/target/
+/iap-configure/target/
+/iap-follow/target/
+/iap-mobile/target/
+/iap-proxy/target/
+/iap-search/target/
+/iap-tag/target/

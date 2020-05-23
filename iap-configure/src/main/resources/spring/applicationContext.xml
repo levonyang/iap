@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+    http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <!--<context:property-placeholder location="classpath*:*.properties,classpath*:conf/**/*.properties" ignore-unresolvable="true"/>-->
+    <context:component-scan base-package="com.haizhi.iap.*"/>
+
+    <!-- 启用proxy class, 默认为proxy interface -->
+    <aop:config proxy-target-class="true"/>
+
+    <!-- 启用 aspect 注解 -->
+    <aop:aspectj-autoproxy/>
+
+    <bean id="propertyConfigurer" class="com.haizhi.iap.common.config.ApplicationConfigurer">
+        <property name="baseLocation" value="classpath:/conf/"></property>
+        <property name="configs">
+            <list>
+                <value>jdbc.properties</value>
+                <value>mongo.properties</value>
+                <value>redis.properties</value>
+                <value>arango.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="globalExceptionHandler" class="com.haizhi.iap.common.exception.GlobalExceptionHandler"></bean>
+
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="minIdle" value="${redis.pool.minIdle}"/>
+        <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+        <property name="maxTotal" value="${redis.pool.maxTotal}"/>
+        <property name="maxWaitMillis" value="${redis.pool.maxWaitMillis}"/>
+    </bean>
+
+    <bean id="jedis" class="com.haizhi.iap.common.factory.JedisPoolFactory" factory-method="get">
+        <constructor-arg ref="poolConfig"/>
+        <constructor-arg type="java.lang.String" value="${redis.host}"/>
+        <constructor-arg value="${redis.port}"/>
+        <constructor-arg value="${redis.timeout}"/>
+        <constructor-arg value="${redis.password}"/>
+    </bean>
+
+    <bean id="userSessionRepo" class="com.haizhi.iap.common.auth.UserSessionRepo">
+        <property name="jedisPool" ref="jedis"/>
+    </bean>
+
+    <camelContext id="camelContext" xmlns="http://camel.apache.org/schema/spring">
+        <package>com.haizhi.iap.configure</package>
+    </camelContext>
+
+    <bean id="producerTemplate" class="org.apache.camel.impl.DefaultProducerTemplate" init-method="start">
+        <constructor-arg index="0"  ref="camelContext" />
+    </bean>
+</beans>

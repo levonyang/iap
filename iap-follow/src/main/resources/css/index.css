@@ -1,0 +1,52 @@
+*{
+    font-family: fontSimhei
+}
+.tableStyle1 {
+    border: 1px solid #e9e8e8;
+    width: 120px;
+    font-size: 13px;
+}
+.contentTable {
+    border: none;
+    font-size: 13px;
+}
+.contentTitle {
+    font-size: 16px;
+    font-weight: bolder;
+    padding-right: 10px;
+}
+.contentTitleP {
+    font-size: 16px;
+    font-weight: bolder;
+}
+.contentTableNull {
+    border: none;
+    width: 100%;
+    font-size: 13px;
+}
+.contentTitleNullNum {
+    font-size: 13px;
+    color: #999;
+    width: 100%;
+    font-weight: bolder;
+}
+
+.contentText {
+    border: 1px solid #008cff;
+    color: #008cff;
+    padding: 0 3px;
+}
+.job {
+    color: #666;
+    font-size: 11px;
+    padding-left: 15px
+}
+.tableStyle2 tr td {
+    border-right: 15px solid white;
+    border-bottom: 15px solid white;
+    border-left: 2px solid white;
+}
+.name {
+    padding-left: 15px;
+    padding-top: 15px
+}

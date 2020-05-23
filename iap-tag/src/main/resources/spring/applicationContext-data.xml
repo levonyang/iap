@@ -1,0 +1,71 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="parentDataSource" abstract="true" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="maxActive" value="30"/>
+        <property name="maxWait" value="3000"/>
+        <property name="minIdle" value="10"/>
+        <property name="maxIdle" value="15"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="validationQuery" value="select 1"/>
+    </bean>
+
+    
+    <bean id="dataSource" parent="parentDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="${tag.mysql.url}"/>
+        <property name="username" value="${tag.mysql.username}"/>
+        <property name="password" value="${tag.mysql.password}"/>
+    </bean>
+
+    <bean id="tagJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 自动扫描 mapping.xml文件�*表示迭代查找,也可在sqlMapConfig.xml中单独指定xml文件-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:sqlMapConfig.xml"/>
+        <property name="mapperLocations" value="classpath:mapping/*.xml"/>
+    </bean>
+
+    <!-- DAO接口所在包名，Spring会自动查找其下的�-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--set注入-->
+        <property name="basePackage" value="com.haizhi.iap.tag.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="objectMapper" class="com.haizhi.iap.common.factory.ObjectMapperFactory" factory-method="get"/>
+
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="minIdle" value="${redis.pool.minIdle}"/>
+        <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+        <property name="maxTotal" value="${redis.pool.maxTotal}"/>
+        <property name="maxWaitMillis" value="${redis.pool.maxWaitMillis}"/>
+    </bean>
+
+    <bean id="jedis" class="com.haizhi.iap.common.factory.JedisPoolFactory" factory-method="get">
+        <constructor-arg ref="poolConfig"/>
+        <constructor-arg type="java.lang.String" value="${redis.host}"/>
+        <constructor-arg value="${redis.port}"/>
+        <constructor-arg value="${redis.timeout}"/>
+        <constructor-arg value="${redis.password}"/>
+    </bean>
+
+    <bean id="userSessionRepo" class="com.haizhi.iap.common.auth.UserSessionRepo">
+        <property name="jedisPool" ref="jedis"/>
+    </bean>
+
+</beans>

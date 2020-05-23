@@ -1,0 +1,155 @@
+{
+  "options": {
+    "edges": [
+      {
+        "class": "invest",
+        "visible": true,
+        "trace_depth": 1
+      },
+      {
+        "class": "shareholder",
+        "visible": true,
+        "trace_depth": 1
+      },
+      {
+        "class": "officer",
+        "visible": true,
+        "trace_depth": 1
+      },
+      {
+        "class": "family",
+        "visible": false,
+        "trace_depth": 1
+      },
+      {
+        "class": "concert",
+        "visible": false,
+        "trace_depth": 1
+      },
+      {
+        "class": "sue",
+        "visible": false,
+        "trace_depth": 1
+      },
+      {
+        "class": "control_shareholder",
+        "visible": false,
+        "trace_depth": 1
+      },
+      {
+        "class": "actual_controller",
+        "visible": false,
+        "trace_depth": 1
+      },
+      {
+        "class": "company_group",
+        "visible": false,
+        "trace_depth": 1
+      },
+      {
+        "class": "person_merge",
+        "visible": true,
+        "trace_depth": 1
+      },
+      {
+        "class": "guarantee",
+        "visible": true,
+        "trace_depth": 1
+      },
+      {
+        "class": "money_flow",
+        "visible": true,
+        "trace_depth": 1
+      },
+      {
+        "class": "tradable_share",
+        "visible": true,
+        "trace_depth": 1
+      },
+      {
+        "class": "upstream",
+        "visible": false,
+        "trace_depth": 1
+      },
+      {
+        "class": "win_bid",
+        "visible": false,
+        "trace_depth": 1
+      },
+      {
+        "class": "publish_bid",
+        "visible": false,
+        "trace_depth": 1
+      },
+      {
+        "class": "agent_bid",
+        "visible": false,
+        "trace_depth": 1
+      },
+      {
+        "class": "indirect_invest",
+        "visible": false,
+        "trace_depth": 1
+      }
+    ],
+    "min_weight": 0,
+    "max_length": 10,
+    "filter": {
+      "edge": {
+        "invest": {
+          "invest_amount": {},
+          "invest_ratio": {},
+          "shareholder_ratio": {},
+          "shareholder_type": [
+            "Person",
+            "Company"
+          ]
+        },
+        "officer": {
+          "position": [
+            "董事",
+            "监事",
+            "法定代表人",
+            "其他高管"
+          ]
+        },
+        "sue": {
+          "type": []
+        },
+        "guarantee": {
+          "guarantee_date": {},
+          "guarantee_amount": {}
+        },
+        "money_flow": {
+          "money_flow_date": {},
+          "money_flow_amount": {}
+        }
+      },
+      "vertex": {
+        "Company": {
+          "capital": {},
+          "company_type": [],
+          "operation_startdate": {}
+        },
+        "Bid_detail": {
+          "publish_time": {}
+        },
+        "Judgement_wenshu": {
+          "case_date": {}
+        },
+        "Court_bulletin_doc": {
+          "court_time": {}
+        },
+        "Judge_process": {
+          "filing_date": {}
+        },
+        "Court_announcement_doc": {
+          "bulletin_date": {}
+        }
+      }
+    },
+    "expand": [],
+    "exclude": []
+  },
+  "company": "海致网络技术（北京）有限公司"
+}

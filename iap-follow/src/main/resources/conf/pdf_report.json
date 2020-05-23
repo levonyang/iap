@@ -1,0 +1,1802 @@
+{
+  "comments": "table四种类型 list_table（股东）/list_card（专利）/map_table（工商信息）/list_pane（主要人员)",
+  "status": 0,
+  "data": {
+    "basic": {
+      "cname": "工商信息",
+      "type": "map",
+      "empty_tips": "暂无工商信息",
+      "children": {
+        "gongshang_basic": {
+          "cname": "工商基本信息",
+          "tpl_type": "map_table",
+          "empty_tips": "暂无工商信息",
+          "column_widths" : [77, 143, 63, 170],
+          "schema": [
+            {
+              "key_cname": "统一社会信用码",
+              "key_name": "unified_social_credit_code",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "注册号",
+              "key_name": "registered_code",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "省份",
+              "key_name": "province",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "经营状态",
+              "key_name": "business_status",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "公司类型",
+              "key_name": "enterprise_type",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "成立日期",
+              "key_name": "registered_date",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "法定代表人",
+              "key_name": "legal_man",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "营业期限",
+              "key_name": "period",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "注册资本",
+              "key_name": "src_registered_capital",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "核准日期",
+              "key_name": "hezhun_date",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "上市板块",
+              "key_name": "public_sector",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "股票代码",
+              "key_name": "stock_code",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "主营行业",
+              "key_name": "industry",
+              "filter": "NullToString",
+              "colspan": 3
+            },
+            {
+              "key_cname": "登记机关",
+              "key_name": "registered_address",
+              "filter": "NullToString",
+              "colspan": 3
+            },
+            {
+              "key_cname": "企业地址",
+              "key_name": "address",
+              "filter": "NullToString",
+              "colspan": 3
+            },
+            {
+              "key_cname": "经营范围",
+              "key_name": "business_scope",
+              "filter": "NullToString",
+              "colspan": 3
+            }
+          ]
+        },
+        "key_person": {
+          "cname": "主要人员",
+          "tpl_type": "list_pane",
+          "empty_tips": "暂无主要人员",
+          "column_widths" : [],
+          "schema": [
+            {
+              "key_cname": "姓名",
+              "key_name": "name",
+              "filter": "NullToString"
+            },
+            {
+              "key_cname": "职称",
+              "key_name": "job",
+              "filter": "NullToString"
+            }
+          ]
+        },
+        "branch": {
+          "cname": "分支机构",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无分支机构",
+          "column_widths": [1],
+          "schema": [{
+            "key_cname": "机构名称",
+            "key_name": "name",
+            "filter": "NullToString"
+          }]
+        },
+        "change_records": {
+          "cname": "工商变更",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无工商变更",
+          "column_widths": [1, 1],
+          "schema":[
+            [
+              {
+                "key_cname": "变更日期",
+                "key_name": "change_date",
+                "filter": "TimeToDate",
+                "colspan": 1
+              }, {
+              "key_cname": "变更事项",
+              "key_name": "change_item",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+            ],
+            [
+              {
+                "key_cname": "变更前",
+                "key_name": "before_content",
+                "filter": "NullToString",
+                "colspan": 2
+              }, {
+              "key_cname": "变更后",
+              "key_name": "after_content",
+              "filter": "NullToString",
+              "colspan": 2
+            }
+            ]
+          ]
+        },
+        "shareholder_information": {
+          "cname": "股东信息",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无股东信息",
+          "column_widths" : [203, 90, 149, 149, 126],
+          "schema": [
+            {
+              "key_cname": "股东名称",
+              "key_name": "shareholder_name",
+              "filter": "NullToString"
+            },
+            {
+              "key_cname": "股东类型",
+              "key_name": "shareholder_type",
+              "filter": "NullToString"
+            },
+            {
+              "key_cname": "认缴额",
+              "key_name": "invest_amount",
+              "filter": "NullToString"
+            },
+            {
+              "key_cname": "实缴额",
+              "key_name": "paied_amount",
+              "filter": "NullToString"
+            },
+            {
+              "key_cname": "认缴持股比例",
+              "key_name": "shareholding_ratio",
+              "filter": "NullToString"
+            }
+          ]
+        }
+      }
+    },
+    "annual_report": {
+      "cname": "年报",
+      "type": "list",
+      "empty_tips": "暂无年报信息",
+      "title": "year+企业年报",
+      "tooManyTips": "如需查看所有年份，请下载excel格式数据",
+      "children": {
+        "basic": {
+          "cname": "企业基本信息",
+          "tpl_type": "map_table",
+          "empty_tips": "暂无企业基本信息",
+          "column_widths": [124, 228, 101, 266],
+          "schema": [
+            {
+              "key_cname": "统一社会信用码",
+              "key_name": "code",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "经营状态",
+              "key_name": "business_status",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "联系电话",
+              "key_name": "contact_number",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "电子邮箱",
+              "key_name": "email",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "邮政编码",
+              "key_name": "zip_code",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "从业人数",
+              "key_name": "employed_population",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "企业通信地址",
+              "key_name": "address",
+              "filter": "NullToString",
+              "colspan": 3
+            },
+            {
+              "key_cname": "本年度是否股权转让",
+              "key_name": "is_transfer",
+              "filter": "NullToString",
+              "colspan": 3
+            },
+            {
+              "key_cname": "是否有投资信息或购买其他公司股权",
+              "key_name": "is_transfer",
+              "filter": "NullToString",
+              "colspan": 3
+            }
+          ]
+        },
+        "websites": {
+          "cname": "网站或网店信息",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无网站或网店信息",
+          "column_widths": [114, 145, 458],
+          "schema": [
+            {
+              "key_cname": "类型",
+              "key_name": "type",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "名称",
+              "key_name": "name",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "网址",
+              "key_name": "site",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+          ]
+        },
+        "shareholder_information": {
+          "cname": "股东及出资信息",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无股东及出资信息",
+          "column_widths": [1, 1, 1, 1, 1, 1, 1],
+          "schema": [
+            {
+              "key_cname": "股东",
+              "key_name": "shareholder_name",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "认缴出资额(万元)",
+              "key_name": "subscription_amount",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "认缴出资时间",
+              "key_name": "subscription_time",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "认缴出资方式",
+              "key_name": "subscription_type",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "实缴出资额(万元)",
+              "key_name": "paied_amount",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "实缴出资时间",
+              "key_name": "paied_time",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "实缴出资方式",
+              "key_name": "paied_type",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+          ]
+        },
+        "invested_companies": {
+          "cname": "对外投资信息",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无对外投资信息",
+          "column_widths": [1, 1],
+          "schema": [
+            {
+              "key_cname": "被投资的公司名称",
+              "key_name": "company_name",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "统一社会信用代码",
+              "key_name": "code",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+          ]
+        },
+        "enterprise_asset_status_information": {
+          "cname": "企业资产状况信息",
+          "tpl_type": "map_table",
+          "empty_tips": "暂无企业资产状况信息",
+          "column_widths": [124, 228, 124, 228],
+          "schema": [
+            {
+              "key_cname": "资产总额",
+              "key_name": "general_assets",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "所有者权益合计",
+              "key_name": "total_equity",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "销售总额",
+              "key_name": "gross_sales",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "利润总额",
+              "key_name": "total_profit",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "营业总收入中主营业务收入",
+              "key_name": "income_of_total",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "净利润",
+              "key_name": "retained_profits",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "纳税总额",
+              "key_name": "total_tax",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "负债总额",
+              "key_name": "total_indebtedness",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+          ]
+        },
+        "equity_change_infos": {
+          "cname": "股权变更信息",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无股权变更信息",
+          "column_widths": [117, 200, 200, 200],
+          "schema": [
+            {
+              "key_cname": "股东",
+              "key_name": "shareholder_name",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "变更前股权比例",
+              "key_name": "before_rate",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "变更后股权比例",
+              "key_name": "after_rate",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "股权变更日期",
+              "key_name": "change_time",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+          ]
+        },
+        "edit_change_infos": {
+          "cname": "修改记录",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无修改记录",
+          "column_widths": [1, 1, 1, 1, 1],
+          "schema": [
+            {
+              "key_cname": "序号",
+              "key_name": "INDEXUP",
+              "filter": "NullToIndex",
+              "colspan": 1
+            },
+            {
+              "key_cname": "修改事项",
+              "key_name": "change_item",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "修改前",
+              "key_name": "before_content",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "修改后",
+              "key_name": "after_content",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "修改日期",
+              "key_name": "change_date",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+          ]
+        },
+        "out_guarantee_info": {
+          "cname": "对外提供担保保证信息",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无对外提供担保保证信息",
+          "column_widths": [1, 1, 1, 1, 1, 1, 1, 1],
+          "schema": [
+            {
+              "key_cname": "序号",
+              "key_name": "INDEXUP",
+              "filter": "NullToIndex",
+              "colspan": 1
+            },
+            {
+              "key_cname": "债权人",
+              "key_name": "creditor",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "债务人",
+              "key_name": "obligor",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "主债权种类",
+              "key_name": "debt_type",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "主债权数额",
+              "key_name": "debt_amount",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "履行债务的期限",
+              "key_name": "performance_period",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "保证的期间",
+              "key_name": "guarantee_period",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "保证的方式",
+              "key_name": "guarantee_type",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+          ]
+        }
+      }
+    },
+    "list": {
+      "cname": "上市信息",
+      "type": "map",
+      "empty_tips": "暂无上市信息",
+      "children": {
+        "listing": {
+          "cname": "公司概况",
+          "tpl_type": "map_table",
+          "empty_tips": "暂无公司概况",
+          "column_widths" : [77, 143, 63, 170],
+          "schema": [
+            {
+              "key_cname": "股票代码",
+              "key_name": "stock_code",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "公司电话",
+              "key_name": "company_phone",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "股票简称",
+              "key_name": "shares_referred",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "公司传真",
+              "key_name": "company_fax",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "上市板块",
+              "key_name": "public_sector",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "公司网址",
+              "key_name": "company_website",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "公司全称",
+              "key_name": "company_full_name",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "上市时间",
+              "key_name": "market_time",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "英文名称",
+              "key_name": "english_name",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "招股时间",
+              "key_name": "offer_time",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "注册地址",
+              "key_name": "registered_address",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "发行数量(万股)",
+              "key_name": "issue_number",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "公司简称",
+              "key_name": "company_referred",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "发行价格(元)",
+              "key_name": "issue_price",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "法定代表人",
+              "key_name": "legal_man",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "发行市盈率(倍)",
+              "key_name": "issuing_ratio",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "公司董秘",
+              "key_name": "company_chairman_secretary",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "发行方式",
+              "key_name": "distribution_type",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "注册资本(万元)",
+              "key_name": "registered_capital",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "主承销商",
+              "key_name": "lead_underwriter",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "行业种类",
+              "key_name": "industry",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "上市推荐人",
+              "key_name": "listed_references",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "邮政编码",
+              "key_name": "postal_code",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "保荐机构",
+              "key_name": "sponsor_company",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+          ]
+        },
+        "managers": {
+          "cname": "高管人员",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无高管人员",
+          "column_widths": [110, 110, 110, 177, 210],
+          "schema": [
+            {
+              "key_cname": "姓名",
+              "key_name": "name",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "性别",
+              "key_name": "sex",
+              "filter": "NullToString",
+              "colspan": 1
+            },
+            {
+              "key_cname": "年龄",
+              "key_name": "birthday",
+              "filter": "YearToAge",
+              "colspan": 1
+            }, {
+              "key_cname": "学历",
+              "key_name": "school_recode",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "职务",
+              "key_name": "position",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+          ]
+        }
+      }
+    },
+    "investment": {
+      "cname": "投资关系",
+      "type": "map",
+      "empty_tips": "暂无投资关系",
+      "children": {
+        "invest": {
+          "cname": "对外投资",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无对外投资",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1],
+          "schema": [
+            {
+              "key_cname": "公司名称",
+              "key_name": "name",
+              "filter": "NullToString",
+              "colspan": 1
+            }
+          ]
+        },
+        "invest_events": {
+          "cname": "投资事件",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无投资事件",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "事件标题",
+                "key_name": "title",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "投资时间",
+                "key_name": "invest_date",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "投资轮次",
+                "key_name": "round",
+                "filter": "NullToString",
+                "colspan": 1
+              }
+            ],
+            [
+              {
+                "key_cname": "投资金额",
+                "key_name": "amount",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "投资阶段",
+                "key_name": "stage",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "股权",
+                "key_name": "UNDEFINEDCHARACTER",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "投资方信息",
+                "key_name": "pushs",
+                "filter": "investList",
+                "tpl_type": "list_table",
+                "empty_tips": "暂无投资方信息",
+                "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+                "colspan": 2,
+                "column_widths": [1, 1, 1, 1, 1],
+                "schema": [{
+                  "key_cname": "机构",
+                  "key_name": "push_short_name",
+                  "filter": "NullToString"
+                }, {
+                  "key_cname": "基金",
+                  "key_name": "push_full_name",
+                  "filter": "NullToString"
+                },
+                  {
+                    "key_cname": "投资人",
+                    "key_name": "push_vcpe_type",
+                    "filter": "NullToString"
+                  }, {
+                    "key_cname": "投资金额",
+                    "key_name": "UNDEFINEDCHARACTER",
+                    "filter": "NullToString"
+                  },
+                  {
+                    "key_cname": "投资类型",
+                    "key_name": "push_type",
+                    "filter": "NullToString"
+                  }]
+              }
+            ]
+          ]
+        },
+        "financial_events": {
+          "cname": "融资事件",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无融资事件",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "事件标题",
+                "key_name": "title",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "融资金额",
+                "key_name": "amount",
+                "filter": "NullToStringAll",
+                "colspan": 1
+              },
+              {
+                "key_cname": "发布日期",
+                "key_name": "public_date",
+                "filter": "TimeToDate",
+                "colspan": 1
+              }
+            ],
+            [
+              {
+                "key_cname": "融资方式",
+                "key_name": "mode",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "轮次",
+                "key_name": "round",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "出让股权",
+                "key_name": "proportion_share_transfer",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "股权",
+                "key_name": "UNDEFINEDCHARACTER",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "投资轮次",
+                "key_name": "round",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        },
+        "acquirer_events": {
+          "cname": "并购事件",
+          "tpl_type": "map_table",
+          "empty_tips": "暂无并购事件",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [{
+            "key_cname": "并购开始时间",
+            "key_name": "begin_date",
+            "filter": "NullToString"
+          }, {
+            "key_cname": "并购结束时间",
+            "key_name": "end_date",
+            "filter": "NullToString"
+          }]
+        },
+        "exit_events": {
+          "cname": "退出事件",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无退出事件",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "事件标题",
+                "key_name": "title",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "退出方式",
+                "key_name": "divestment_mode",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "退出时间",
+                "key_name": "divestment_date",
+                "filter": "NullToString",
+                "colspan": 1
+              }
+            ],
+            [
+              {
+                "key_cname": "机构",
+                "key_name": "divestment_short_name",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "内部收益率",
+                "key_name": "internal_rewards_rate",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "本次账面回报倍数",
+                "key_name": "current_rewards_multiple",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "首次投资事件",
+                "key_name": "first_investment_date",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "累计投资金额",
+                "key_name": "cumulative_investment_amount",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        }
+      }
+    },
+    "intellectual_property": {
+      "cname": "知识产权",
+      "type": "map",
+      "empty_tips": "暂无工商信息",
+      "children": {
+        "trademark": {
+          "cname": "商标",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无商标",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1, 1],
+          "schema": [{
+            "key_cname": "商标名称",
+            "key_name": "name",
+            "filter": "NullToString"
+          }, {
+            "key_cname": "商标状态",
+            "key_name": "status",
+            "filter": "NullToString"
+          },
+            {
+              "key_cname": "类别",
+              "key_name": "type_name",
+              "filter": "NullToString"
+            }]
+        },
+        "patent": {
+          "cname": "专利信息",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无专利信息",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "专利名称",
+                "key_name": "title",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "公告日期",
+                "key_name": "publish_date",
+                "filter": "TimeToDate",
+                "colspan": 2
+              }
+            ],
+            [
+              {
+                "key_cname": "发明者",
+                "key_name": "inventors",
+                "filter": "NullToArray",
+                "colspan": 1
+              },
+              {
+                "key_cname": "申请者",
+                "key_name": "submitter",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "申请号",
+                "key_name": "submit_id",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "申请时间",
+                "key_name": "submit_date",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "发布号",
+                "key_name": "publish_no",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "专利代理机构",
+                "key_name": "agent_org",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "专利代理人",
+                "key_name": "agents",
+                "filter": "NullToArray",
+                "colspan": 2
+              },
+              {
+                "key_cname": "地址",
+                "key_name": "address",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "摘要",
+                "key_name": "abstract",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        },
+        "copyright": {
+          "cname": "著作权",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无著作权",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1, 1],
+          "schema": [{
+            "key_cname": "商标名称",
+            "key_name": "name",
+            "filter": "NullToString"
+          }, {
+            "key_cname": "商标状态",
+            "key_name": "status",
+            "filter": "NullToString"
+          },
+            {
+              "key_cname": "类别",
+              "key_name": "type_name",
+              "filter": "NullToString"
+            }]
+        },
+        "software_copyright": {
+          "cname": "软件著作权",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无软件著作权",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1, 1],
+          "schema": [{
+            "key_cname": "商标名称",
+            "key_name": "name",
+            "filter": "NullToString"
+          }, {
+            "key_cname": "商标状态",
+            "key_name": "status",
+            "filter": "NullToString"
+          },
+            {
+              "key_cname": "类别",
+              "key_name": "type_name",
+              "filter": "NullToString"
+            }]
+        }
+      }
+    },
+    "bidding": {
+      "cname": "招投标信息",
+      "type": "map",
+      "empty_tips": "暂无招投标信息",
+      "children": {
+        "bid_info": {
+          "cname": "招标信息",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无招标信息",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "项目名称",
+                "key_name": "title",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "中标公司",
+                "key_name": "win_bid_company",
+                "filter": "NullToArray",
+                "colspan": 1
+              },
+              {
+                "key_cname": "发标日期",
+                "key_name": "publish_time",
+                "filter": "TimeToDate",
+                "colspan": 1
+              }
+            ],
+            [
+              {
+                "key_cname": "招标编号",
+                "key_name": "bid_id",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "所属城市",
+                "key_name": "city",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "招标金额",
+                "key_name": "bid_money",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "招标详情",
+                "key_name": "bid_content",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        },
+        "win_info": {
+          "cname": "中标信息",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无中标信息",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "项目名称",
+                "key_name": "title",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "招标公司",
+                "key_name": "win_bid_company",
+                "filter": "NullToArray",
+                "colspan": 1
+              },
+              {
+                "key_cname": "发标日期",
+                "key_name": "publish_time",
+                "filter": "NullToString",
+                "colspan": 1
+              }
+            ],
+            [
+              {
+                "key_cname": "中标编号",
+                "key_name": "bid_id",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "所属城市",
+                "key_name": "city",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "中标金额",
+                "key_name": "bid_money",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "中标详情",
+                "key_name": "bid_content",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        },
+        "land_auction": {
+          "cname": "土地招拍挂信息",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无土地招拍挂信息",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "标题",
+                "key_name": "title",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "成交价",
+                "key_name": "deal_price",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "成交时间",
+                "key_name": "deal_date",
+                "filter": "NullToString",
+                "colspan": 1
+              }
+            ],
+            [
+              {
+                "key_cname": "地块编号",
+                "key_name": "code",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "起始价",
+                "key_name": "starting_price",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "总面积",
+                "key_name": "acreage",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "溢价率",
+                "key_name": "premium_rate",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "楼面地价",
+                "key_name": "floor_price",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        }
+      }
+    },
+    "risk": {
+      "cname": "风险信息",
+      "type": "map",
+      "empty_tips": "暂无风险信息",
+      "children": {
+        "shixin_info": {
+          "cname": "失信被执行人",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无失信被执行人",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths":  [1, 1],
+          "schema": [
+            [{
+              "key_cname": "案件编号",
+              "key_name": "case_id",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "发布日期",
+              "key_name": "publish_date",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "涉案金额",
+              "key_name": "max_money",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "被执行人履行情况",
+              "key_name": "performance",
+              "filter": "NullToString",
+              "colspan": 1
+            }], [{
+              "key_cname": "被执行人姓名",
+              "key_name": "i_name",
+              "filter": "NullToString",
+              "colspan": 2
+            }, {
+              "key_cname": "执行依据文号",
+              "key_name": "gist_id",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "组织机构代码",
+              "key_name": "registered_code",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "省份",
+              "key_name": "province",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "立案时间",
+              "key_name": "reg_date",
+              "filter": "TimeToDate",
+              "colspan": 1
+            }, {
+              "key_cname": "执行法院",
+              "key_name": "gist_unit",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "做出执行依据单位",
+              "key_name": "court",
+              "filter": "NullToString",
+              "colspan": 1
+            }, {
+              "key_cname": "法定代表人/负责人",
+              "key_name": "business_entity",
+              "filter": "NullToString",
+              "colspan": 2
+            }, {
+              "key_cname": "生效法律文书确定的义务",
+              "key_name": "duty",
+              "filter": "NullToString",
+              "colspan": 2
+            }, {
+              "key_cname": "失信被执行人行为具体情形",
+              "key_name": "disrupt_type_name",
+              "filter": "NullToString",
+              "colspan": 2
+            }]
+          ]
+        },
+        "zhixing_info": {
+          "cname": "被执行人信息",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无被执行人信息",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1, 1, 1],
+          "schema": [{
+            "key_cname": "立案时间",
+            "key_name": "case_date",
+            "filter": "NullToString",
+            "colspan": 1
+          }, {
+            "key_cname": "案件编号",
+            "key_name": "case_id",
+            "filter": "NullToString",
+            "colspan": 1
+          }, {
+            "key_cname": "执行标的",
+            "key_name": "exec_money",
+            "filter": "NullToString",
+            "colspan": 1
+          }, {
+            "key_cname": "法院",
+            "key_name": "court",
+            "filter": "NullToString",
+            "colspan": 1
+          }]
+        },
+        "judgement_wenshu": {
+          "cname": "法院判决",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无法院判决",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "裁判日期",
+                "key_name": "case_date",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "身份",
+                "key_name": "identity",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "案件名称",
+                "key_name": "case_name",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "案由",
+                "key_name": "case_cause",
+                "filter": "NullToString",
+                "colspan": 1
+              }
+            ],
+            [
+              {
+                "key_cname": "案件编号",
+                "key_name": "case_id",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "案件类型",
+                "key_name": "case_type",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "原告",
+                "key_name": "plaintiff_list",
+                "filter": "NullToArray",
+                "colspan": 2
+              },
+              {
+                "key_cname": "被告",
+                "key_name": "defendant_list",
+                "filter": "NullToArray",
+                "colspan": 2
+              },
+              {
+                "key_cname": "判决结果",
+                "key_name": "judge_content",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        },
+        "court_ktgg": {
+          "cname": "开庭公告",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无开庭公告",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "开庭日期",
+                "key_name": "court_time",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "案件编号",
+                "key_name": "case_id",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "案由",
+                "key_name": "case_cause",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "身份",
+                "key_name": "identity",
+                "filter": "NullToString",
+                "colspan": 1
+              }
+            ],
+            [
+              {
+                "key_cname": "公告日期",
+                "key_name": "bulletin_date",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "原告",
+                "key_name": "plaintiff_list",
+                "filter": "NullToArray",
+                "colspan": 2
+              },
+              {
+                "key_cname": "被告",
+                "key_name": "defendant_list",
+                "filter": "NullToArray",
+                "colspan": 2
+              },
+              {
+                "key_cname": "当事人",
+                "key_name": "litigants",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "法院/审判庭/法庭",
+                "key_name": "court",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "审判长/主审人/法官",
+                "key_name": "judge",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        },
+        "court_fygg": {
+          "cname": "法院公告",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无法院公告",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "公告时间",
+                "key_name": "bulletin_date",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "案件编号",
+                "key_name": "case_id",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "公告类型",
+                "key_name": "bulletin_type",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "身份",
+                "key_name": "identity",
+                "filter": "NullToString",
+                "colspan": 1
+              }
+            ],
+            [
+              {
+                "key_cname": "法院",
+                "key_name": "court",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "原告",
+                "key_name": "plaintiff_list",
+                "filter": "NullToArray",
+                "colspan": 2
+              },
+              {
+                "key_cname": "被告",
+                "key_name": "defendant_list",
+                "filter": "NullToArray",
+                "colspan": 2
+              },
+              {
+                "key_cname": "公告内容",
+                "key_name": "norm_bulletin_content",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        },
+        "judge_process": {
+          "cname": "审判流程",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无审判流程",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "立案日期",
+                "key_name": "filing_date",
+                "filter": "TimeToDate",
+                "colspan": 1
+              },
+              {
+                "key_cname": "案件编号",
+                "key_name": "case_id",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "案件状态",
+                "key_name": "status",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ],
+            [
+              {
+                "key_cname": "开庭时间",
+                "key_name": "court_time",
+                "filter": "TimeToDate",
+                "colspan": 2
+              },{
+              "key_cname": "结案时间",
+              "key_name": "close_date",
+              "filter": "TimeToDate",
+              "colspan": 2
+            },
+              {
+                "key_cname": "上诉人/原告",
+                "key_name": "plaintiff_list",
+                "filter": "NullToArray",
+                "colspan": 2
+              },
+              {
+                "key_cname": "被上诉人/被告",
+                "key_name": "defendant_list",
+                "filter": "NullToArray",
+                "colspan": 2
+              }
+            ]
+          ]
+        },
+        "penalty": {
+          "cname": "行政处罚",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无行政处罚",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据35264784839",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "处罚时间",
+                "key_name": "penalty_time",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "原因",
+                "key_name": "title",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ],
+            [
+              {
+                "key_cname": "发布时间",
+                "key_name": "publish_time",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "处罚编号",
+                "key_name": "penalty_id",
+                "filter": "NullToString",
+                "colspan": 1
+              },
+              {
+                "key_cname": "处罚部门",
+                "key_name": "execute_authority",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "处罚详情",
+                "key_name": "penalty_result",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        },
+        "owing_tax": {
+          "cname": "欠税公告",
+          "tpl_type": "list_table",
+          "empty_tips": "暂无欠税公告",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1, 1],
+          "schema": [{
+            "key_cname": "欠税项目",
+            "key_name": "tax_item",
+            "filter": "NullToString"
+          }, {
+            "key_cname": "法人",
+            "key_name": "legal_man",
+            "filter": "NullToString"
+          }, {
+            "key_cname": "纳税人登记号",
+            "key_name": "taxpayer_id",
+            "filter": "NullToString"
+          }]
+        }
+      }
+    },
+    "public_sentiment": {
+      "cname": "舆情信息",
+      "type": "map",
+      "empty_tips": "暂无舆情信息",
+      "children": {
+        "news": {
+          "cname": "新闻",
+          "tpl_type": "list_card",
+          "empty_tips": "暂无新闻",
+          "tooManyTips": "该项数据量较大，如需查看更多数据，请下载excel格式数据",
+          "column_widths": [1, 1],
+          "schema": [
+            [
+              {
+                "key_cname": "",
+                "key_name": "title",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "",
+                "key_name": "author",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "",
+                "key_name": "_utime",
+                "filter": "NullToString",
+                "colspan": 2
+              },
+              {
+                "key_cname": "概要:",
+                "key_name": "summary",
+                "filter": "NullToString",
+                "colspan": 2
+              }
+            ]
+          ]
+        }
+      }
+    }
+  }
+}

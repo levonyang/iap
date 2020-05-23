@@ -1,0 +1,59 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <bean id="parentDataSource" abstract="true" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="maxActive" value="30"/>
+        <property name="maxWait" value="3000"/>
+        <property name="minIdle" value="10"/>
+        <property name="maxIdle" value="15"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="validationQuery" value="select 1"/>
+    </bean>
+    
+    <bean id="dataSource" parent="parentDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="${iap.mysql.url}"/>
+        <property name="username" value="${iap.mysql.username}"/>
+        <property name="password" value="${iap.mysql.password}"/>
+    </bean>
+
+    <bean id="mongo" class="com.haizhi.iap.common.factory.MongoFactory" factory-method="get">
+        <constructor-arg value="${app.mongodb.uri}"/>
+    </bean>
+    
+    <bean id="proxyJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="objectMapper" class="com.haizhi.iap.common.factory.ObjectMapperFactory" factory-method="get"/>
+
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="minIdle" value="${redis.pool.minIdle}"/>
+        <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+        <property name="maxTotal" value="${redis.pool.maxTotal}"/>
+        <property name="maxWaitMillis" value="${redis.pool.maxWaitMillis}"/>
+    </bean>
+
+    <bean id="jedis" class="com.haizhi.iap.common.factory.JedisPoolFactory" factory-method="get">
+        <constructor-arg ref="poolConfig"/>
+        <constructor-arg type="java.lang.String" value="${redis.host}"/>
+        <constructor-arg value="${redis.port}"/>
+        <constructor-arg value="${redis.timeout}"/>
+        <constructor-arg value="${redis.password}"/>
+    </bean>
+
+    <bean id="userSessionRepo" class="com.haizhi.iap.common.auth.UserSessionRepo">
+        <property name="jedisPool" ref="jedis"/>
+    </bean>
+</beans>
